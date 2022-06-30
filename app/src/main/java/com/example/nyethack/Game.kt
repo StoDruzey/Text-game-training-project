@@ -95,4 +95,17 @@ object Game {
             println("There is no bells in this room!")
         }
     }
+
+    private fun fight() = currentRoom.monster?.let {
+        while (player.healthPoints > 0 && it.healthPoints >0) {
+            Thread.sleep(1000)
+        }
+        "Combat complete."
+    } ?: "There's nothing here to fight."
+
+    private fun slay(monster: Monster) {
+        println("${monster.name} did ${monster.attack(player)} damage!")
+        println("${player.name} did ${player.attack(monster)} damage!")
+    }
+
 }
