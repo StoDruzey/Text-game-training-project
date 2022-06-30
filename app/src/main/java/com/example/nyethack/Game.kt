@@ -48,6 +48,7 @@ object Game {
             "quit" -> gameOver()
             "map" -> map()
             "ring" -> ring(currentRoom)
+            "fight" -> fight()
             else -> commandNotFound()
         }
         private fun commandNotFound() = "I'm not quite sure what you're trying to do!"
@@ -99,6 +100,7 @@ object Game {
 
     private fun fight() = currentRoom.monster?.let {
         while (player.healthPoints > 0 && it.healthPoints >0) {
+            slay(it)
             Thread.sleep(1000)
         }
         "Combat complete."
