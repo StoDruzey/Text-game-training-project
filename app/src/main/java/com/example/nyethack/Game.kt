@@ -2,6 +2,7 @@ package com.example.nyethack
 
 import java.lang.Exception
 import java.lang.IllegalStateException
+import kotlin.system.exitProcess
 
 fun main(args: Array<String>) {
     Game.play()
@@ -106,6 +107,17 @@ object Game {
     private fun slay(monster: Monster) {
         println("${monster.name} did ${monster.attack(player)} damage!")
         println("${player.name} did ${player.attack(monster)} damage!")
+
+        if (player.healthPoints <= 0) {
+            println(">>> You have been defeated! Thanks for playing. <<<")
+            exitProcess(0)
+        }
+
+        if (monster.healthPoints <= 0) {
+            println(">>> ${monster.name} has been defeated! <<<")
+            currentRoom.monster = null
+        }
+
     }
 
 }
