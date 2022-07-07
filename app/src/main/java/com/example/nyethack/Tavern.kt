@@ -12,6 +12,8 @@ val menuList = File("data/tavern-menu-items.txt")
     .split("\r\n")
 val patronGold = mutableMapOf<String, Double>()
 
+private fun <T> Iterable<T>.random(): T = this.shuffled().first()
+
 fun main() {
     val greetingFunction: (String) -> String = {
         val currentYear = 2022
