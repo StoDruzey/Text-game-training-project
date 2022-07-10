@@ -1,5 +1,6 @@
 package com.example.nyethack
 import java.io.File
+import random as randomizer
 
 const val TAVERN_NAME = "Taernyl's Folly"
 
@@ -19,8 +20,8 @@ fun main() {
     println(greetingFunction("Serge"))
 
     (0..9).forEach {
-        val first = patronList.random()
-        val last = lastName.random()
+        val first = patronList.randomizer()
+        val last = lastName.randomizer()
         val name = "$first $last"
         uniquePatrons += name
     }
@@ -29,7 +30,7 @@ fun main() {
     }
     var orderCount = 0
     while (orderCount <= 9) {
-        placeOrder(uniquePatrons.random(), menuList.random())
+        placeOrder(uniquePatrons.randomizer(), menuList.randomizer())
         orderCount++
     }
     println(patronGold)

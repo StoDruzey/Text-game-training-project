@@ -1,6 +1,7 @@
 package com.example.nyethack
 
 import java.io.File
+import random as randomizer
 
 class Player(_name: String,
              override var healthPoints: Int = 100,
@@ -28,7 +29,7 @@ class Player(_name: String,
 
     private fun selectHomeTown() = File("d:/Android/data/towns.txt")
         .readText()
-        .split("\r\n").random()
+        .split("\r\n").randomizer()
 
     fun auraColor(): String {
         val auraVisible = isBlessed && healthPoints > 50 || isImmortal
