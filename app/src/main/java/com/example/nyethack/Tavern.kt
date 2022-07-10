@@ -1,6 +1,5 @@
 package com.example.nyethack
 import java.io.File
-import kotlin.math.roundToInt
 
 const val TAVERN_NAME = "Taernyl's Folly"
 
@@ -11,8 +10,6 @@ val menuList = File("data/tavern-menu-items.txt")
     .readText()
     .split("\r\n")
 val patronGold = mutableMapOf<String, Double>()
-
-private fun <T> Iterable<T>.random(): T = this.shuffled().first()
 
 fun main() {
     val greetingFunction: (String) -> String = {

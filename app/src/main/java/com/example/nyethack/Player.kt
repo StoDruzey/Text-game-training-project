@@ -28,9 +28,7 @@ class Player(_name: String,
 
     private fun selectHomeTown() = File("d:/Android/data/towns.txt")
         .readText()
-        .split("\r\n")
-        .shuffled()
-        .first()
+        .split("\r\n").random()
 
     fun auraColor(): String {
         val auraVisible = isBlessed && healthPoints > 50 || isImmortal
