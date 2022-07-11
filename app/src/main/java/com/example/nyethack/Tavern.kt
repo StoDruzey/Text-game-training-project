@@ -88,7 +88,7 @@ private fun placeOrder(patronName: String, menuData: String) {
     println(message)
     performPurchase(price.toDouble(), patronName)
     val phrase = if (name == "Dragon's Breath") {
-        "$patronName exclaims: ${toDragonSpeak("Ah, delicious $name!")}"
+        "$patronName exclaims: ${"Ah, delicious $name!".toDragonSpeak()}"
         } else {
             "$patronName says: Thanks for the $name."
         }
@@ -105,7 +105,18 @@ private fun placeOrder(patronName: String, menuData: String) {
 //    }
 }
 
-private fun toDragonSpeak(phrase: String) = phrase.replace(Regex("[AEIOUaeiou]")) {
+//private fun toDragonSpeak(phrase: String) = phrase.replace(Regex("[AEIOUaeiou]")) {
+//    when (it.value) {
+//        "A", "a" -> "4"
+//        "E", "e" -> "3"
+//        "I", "i" -> "1"
+//        "O", "o" -> "0"
+//        "U", "u" -> "|_|"
+//        else -> it.value
+//    }
+//}
+
+private fun String.toDragonSpeak() = this.replace(Regex("[AEIOUaeiou]")) {
     when (it.value) {
         "A", "a" -> "4"
         "E", "e" -> "3"
