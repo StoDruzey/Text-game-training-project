@@ -29,6 +29,10 @@ object Game {
             printPlayerStatus(player)
             print("> Enter your command: ")
             println(GameInput(readLine()).processCommand())
+            currentRoom.configurePitGoblin { goblin ->
+                goblin.healthPoints = dangerLevel * 3
+                goblin
+            }
         }
     }
 

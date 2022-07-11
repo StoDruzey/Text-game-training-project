@@ -1,7 +1,7 @@
 package com.example.nyethack
 
 open class Room(val name: String) {
-    protected open val dangerLevel = 5
+    open val dangerLevel = 5
     var monster: Monster? = Goblin()
     fun description() = "Room: $name\n" +
             "Danger level: $dangerLevel\n" +
@@ -14,5 +14,11 @@ class TownSquare : Room("Town Square") {
     private val bellSound = "GWONG"
     override fun load() = "The villagers rally and cheer as you enter!\n${ringBell()}"
     public fun ringBell() = "The bell tower announces your arrival. $bellSound"
+}
+
+fun Room.configurePitGoblin(block: Room.(Goblin) -> Goblin): Room {
+    val goblin = block(Goblin("Pit Goblin", description = "An Evil Pit Goblin"))
+    monster = goblin
+    return this
 }
 
