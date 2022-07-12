@@ -2,6 +2,7 @@ package com.example.nyethack
 import java.io.File
 import random as randomizer
 import toDragonSpeak
+import frame
 
 const val TAVERN_NAME = "Taernyl's Folly"
 
@@ -54,6 +55,8 @@ fun main() {
 
 
 //    dragonsBreathReserve(5, 9)
+
+    println(frame("Welcome, Madrigal", 15, "*"))
 }
 private fun displayPartnerBalances() {
     patronGold.forEach { patron, balance ->
