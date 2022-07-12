@@ -1,6 +1,7 @@
 package com.example.nyethack
 import java.io.File
 import random as randomizer
+import toDragonSpeak
 
 const val TAVERN_NAME = "Taernyl's Folly"
 
@@ -116,16 +117,16 @@ private fun placeOrder(patronName: String, menuData: String) {
 //    }
 //}
 
-private fun String.toDragonSpeak() = this.replace(Regex("[AEIOUaeiou]")) {
-    when (it.value) {
-        "A", "a" -> "4"
-        "E", "e" -> "3"
-        "I", "i" -> "1"
-        "O", "o" -> "0"
-        "U", "u" -> "|_|"
-        else -> it.value
-    }
-}
+//private fun String.toDragonSpeak() = this.replace(Regex("[AEIOUaeiou]")) {
+//    when (it.value) {
+//        "A", "a" -> "4"
+//        "E", "e" -> "3"
+//        "I", "i" -> "1"
+//        "O", "o" -> "0"
+//        "U", "u" -> "|_|"
+//        else -> it.value
+//    }
+//}
 
 fun performPurchase(price: Double, patronName: String) {
     val totalPurse = patronGold.getValue(patronName)
