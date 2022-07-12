@@ -56,7 +56,7 @@ fun main() {
 
 //    dragonsBreathReserve(5, 9)
 
-    println(frame("Welcome, Madrigal", 15, "*"))
+    println("Welcome, Madrigal".frame(10))
 }
 private fun displayPartnerBalances() {
     patronGold.forEach { patron, balance ->

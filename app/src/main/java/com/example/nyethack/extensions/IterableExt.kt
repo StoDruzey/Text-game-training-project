@@ -11,8 +11,8 @@ fun String.toDragonSpeak() = this.replace(Regex("[AEIOUaeiou]")) {
     }
 }
 
-fun frame(name: String, padding: Int, formatChar: String = "*"): String {
-    val greeting = "$name!"
+fun String.frame(padding: Int, formatChar: String = "*"): String {
+    val greeting = "$this!"
     val middle = formatChar.padEnd(padding)
         .plus(greeting)
         .plus(formatChar.padStart(padding))
